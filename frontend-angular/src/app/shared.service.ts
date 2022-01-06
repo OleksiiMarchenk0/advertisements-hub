@@ -5,10 +5,12 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly API_URL = 'http://127.0.0.1:8000/';
+readonly API_URL = 'http://127.0.0.1:8000';
   constructor(private http:HttpClient) { }
 
   getCategories():Observable<any[]>{
+    console.log(this.http.get<any[]>(`${this.API_URL}/category/`));
+
     return this.http.get<any[]>(`${this.API_URL}/category/`)
   }
   addCategory(val:any):Observable<any[]>{

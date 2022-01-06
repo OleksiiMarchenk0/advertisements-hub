@@ -1,1 +1,16 @@
-<p>show-category works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>ordering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of CategoryList">
+      <td>{{category.id}}</td>
+      <td>{{category.name}}</td>
+      <td>{{category.ordering}}</td>
+    </tr>
+  </tbody>
+</table>
