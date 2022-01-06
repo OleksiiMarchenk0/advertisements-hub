@@ -1,20 +1,8 @@
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>description</th>
-      <th>price</th>
-      <th>created_at</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let category of OffersList">
-      <td>{{category.id}}</td>
-      <td>{{category.name}}</td>
-      <td>{{category.description}}</td>
-      <td>{{category.price}}</td>
-      <td>{{category.created_at}}</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li *ngFor="let offer of OffersList" >
+    <a [routerLink]="[offer.id]" [title]="offer.name + ' details'" >
+      {{offer.name}}
+    </a>
+  </li>
+</ul>
+

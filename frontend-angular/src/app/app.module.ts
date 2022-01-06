@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OffersComponent } from './offers/offers.component';
 import { ShowOffersComponent } from './offers/show-offers/show-offers.component';
+import { OfferComponent } from './offer/offer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { ShowOffersComponent } from './offers/show-offers/show-offers.component'
     AddEditComponent,
     ShowCategoryComponent,
     OffersComponent,
-    ShowOffersComponent
+    ShowOffersComponent,
+    OfferComponent
   ],
   imports: [
     BrowserModule,
