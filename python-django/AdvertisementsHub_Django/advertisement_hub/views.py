@@ -38,6 +38,7 @@ def categoryApi(request, id=0):
 
 @csrf_exempt
 def offersApi(request, id=0):
+    print(id)
     offers=Offer.objects.all()
     if request.method == 'GET':
         offers_serializers=OfferSerializer(offers, many=True)
