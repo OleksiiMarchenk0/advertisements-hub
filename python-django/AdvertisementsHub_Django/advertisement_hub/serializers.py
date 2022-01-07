@@ -6,15 +6,9 @@ from advertisement_hub.models import Category,Offer
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model=Category
-        fields=('id',
-                'name',
-                'ordering')
+        fields='__all__'
 
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:
         model=Offer
-        fields=('id',
-                'name',
-                'description',
-                'price',
-                'created_at')
+        fields='__all__'

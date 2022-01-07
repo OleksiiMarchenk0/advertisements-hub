@@ -1,9 +1,9 @@
 
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include, url
-from advertisement_hub import views
+from django.urls import path ,include
+from .router import router
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^',include('advertisement_hub.urls'))
+    path('',include(router.urls))
 ]

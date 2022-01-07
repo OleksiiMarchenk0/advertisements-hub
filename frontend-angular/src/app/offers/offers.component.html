@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let offer of OffersList" >
+    <a [routerLink]="[offer.id]" [title]="offer.name + ' details'" >
+      {{offer.name}}
+    </a>
+  </li>
+</ul>
