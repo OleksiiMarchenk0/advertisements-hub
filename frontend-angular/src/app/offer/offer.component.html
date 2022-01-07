@@ -1,3 +1,7 @@
-<p>offer works!</p>
-{{offer.id}}
-{{offer}}
+<div *ngIf="isDataAvailable">
+ <p>Nazwa : {{offer.name}}</p>
+ <p>Opis : {{offer.description}}</p>
+ <p>Cena : {{offer.price}}</p>
+ <p>Utworzono dnia : {{offer.created_at}}</p>
+ {{category.name}}
+</div>
