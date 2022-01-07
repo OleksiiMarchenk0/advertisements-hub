@@ -1,7 +1,25 @@
+<!--
 <ul>
   <li *ngFor="let offer of OffersList" >
     <a [routerLink]="[offer.id]" [title]="offer.name + ' details'" >
       {{offer.name}}
     </a>
+  </li>
+</ul> -->
+
+
+<ul class="list-group">
+  <li *ngFor="let offer of OffersList" class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">
+        <a [routerLink]="[offer.id]" [title]="offer.name + ' details'">
+          {{offer.name}}
+        </a>
+      </div>
+      <sup>Added {{ offer.created_at | date:'medium' }} </sup>
+    </div>
+    <span class="badge bg-primary rounded-pill">
+      {{offer.price | currency:'PLN '}}
+    </span>
   </li>
 </ul>

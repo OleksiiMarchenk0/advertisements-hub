@@ -1,1 +1,6 @@
-<app-show-category ></app-show-category>
+  <select name="category" >
+    <option value="">--Please choose an option--</option>
+    <option *ngFor="let category of CategoryList" value=category.name>{{category.name}}</option>
+</select>
+<input type="checkbox" id="scales" name="scales"
+    checked>
