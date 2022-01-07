@@ -1,27 +1,58 @@
-# AdvertisementsHub
+# Angular 12 / Django Rest Framework / SQLite app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
+This is an application showing how to make FrontEnd in Angular and Backend in Python&Django and how to integrate them.
 
-## Development server
+## What this repo contains
+* frontend-angular - The Angular app source code lives here
+* python-django - Django project with all important files
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requirements
+* Python 3.5 or higher (Python 2.x is not supported by Django 2.x)
+* [Pipenv](https://pipenv.readthedocs.io/)
+* Node v8.x or higher
+* NPM v5.x or higher
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Backend
+Open a terminal at the repo root, and run the following for running Django project:
 
-## Build
+```bash
+pipenv install
+pipenv shell
+cd python-django/AdvertisementsHub_Django
+python manage.py runserver
+```
+Your app will be available at http://127.0.0.1:8000.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend
+Open a terminal at the repo root, and run the following for running Angular project:
 
-## Running unit tests
+```bash
+cd frontend-angular
+npm install
+npm start -o
+```
+Your app will be available at http://localhost:4200 by default.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## API Endpoints
+* http://127.0.0.1:8000/offers - returns list of offers
+*  http://127.0.0.1:8000/offers/5 - returns offer with id eq 5
+*  http://127.0.0.1:8000/category/ - returns list of categories
+*  http://127.0.0.1:8000/category/1 - returns category with id eq 1
 
-## Running end-to-end tests
+## Database
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This project uses a SQLite database, which lives in the file `db.sqlite3`. SQLite3 support should be available out of the box on most modern operating systems. 
 
-## Further help
+## Logging into the app
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The database included in this repository contains one user. The following is his username and password, which you may use for testing:
+
+- admin / admin
+
+
+
+
+
+
