@@ -13,8 +13,4 @@ class CategorySerializer(serializers.ModelSerializer):
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:
         model=Offer
-        fields=('id',
-                'name',
-                'description',
-                'price',
-                'created_at')
+        fields='__all__'

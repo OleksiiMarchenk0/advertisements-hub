@@ -15,7 +15,7 @@ class Offer(models.Model):
     def __str__(self):
         return self.name
     category = models.ForeignKey(Category,  on_delete=models.CASCADE, null=True)
-    id = models.IntegerField(primary_key=True)
+   # id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=10000)
     price = models.DecimalField(max_digits=12, decimal_places=2)
