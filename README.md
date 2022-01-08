@@ -51,6 +51,15 @@ The database included in this repository contains one user. The following is his
 
 - admin / admin
 
+## Tests
+For testing API you can use ```tests.py``` file. For running test use following command in the next directory. 
+Verify if backend server is running before you will start testing
+```bash
+cd python-django
+cd AdvertisementsHub_Django/advertisement_hub
+python manage.py test
+```
+
 
 
 
