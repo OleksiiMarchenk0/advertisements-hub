@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowCategoryComponent } from './show-category.component';
+import { TopNavigationComponent } from './top-navigation.component';
 
-describe('ShowCategoryComponent', () => {
-  let component: ShowCategoryComponent;
-  let fixture: ComponentFixture<ShowCategoryComponent>;
+describe('TopNavigationComponent', () => {
+  let component: TopNavigationComponent;
+  let fixture: ComponentFixture<TopNavigationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowCategoryComponent ]
+      declarations: [ TopNavigationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowCategoryComponent);
+    fixture = TestBed.createComponent(TopNavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

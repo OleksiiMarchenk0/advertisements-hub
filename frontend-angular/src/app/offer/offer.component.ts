@@ -20,7 +20,7 @@ export class OfferComponent implements OnInit {
   constructor(private service: SharedService,
     private activatedRoute: ActivatedRoute) {
     this.id = 0;
-    
+
     this.categoryId = 0;
     this.offer = {
       "id": 0,
@@ -42,7 +42,6 @@ export class OfferComponent implements OnInit {
       this.id = +params['id'];
     });
     this.refreshOfferData(this.id);
-
   }
   refreshOfferData(id: number) {
     this.service.getOffer(id).subscribe((data) => {

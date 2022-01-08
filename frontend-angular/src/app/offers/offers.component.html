@@ -1,7 +1,32 @@
-<ul>
-  <li *ngFor="let offer of OffersList" >
-    <a [routerLink]="[offer.id]" [title]="offer.name + ' details'" >
-      {{offer.name}}
-    </a>
-  </li>
-</ul>
+<div class="container d-flex flex-wrap mt-3 justify-content-sm-center">
+  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <input (click)="filterOffers(allCategoriesFilter)" type="radio" class="btn-check" name="btnradio"
+      id="all_categories" autocomplete="off" checked>
+    <label class="btn btn-outline-primary me-1 mb-1" for="all_categories">All categories</label>
+    <div *ngFor="let category of CategoryList">
+      <input type="radio" class="btn-check" name="btnradio" id={{category.name}} autocomplete="off">
+      <label (click)="filterOffers(category)" class="btn btn-outline-primary me-1 mb-1"
+        for={{category.name}}>{{category.name}}</label>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-5">
+  <ul class="list-group">
+    <li *ngFor="let offer of filteredOffers" class="list-group-item d-flex justify-content-between align-items-center">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">
+          <a [routerLink]="[offer.id]" [title]="offer.name + ' details'">
+            {{offer.name}}
+          </a>
+        </div>
+        <sup>Added {{ offer.created_at | date:'medium' }} </sup>
+      </div>
+      <span class="badge bg-primary rounded-pill">
+        {{offer.price | currency:'$ '}}
+      </span>
+    </li>
+  </ul>
+</div>
