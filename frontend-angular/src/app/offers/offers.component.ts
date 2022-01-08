@@ -22,12 +22,13 @@ export class OffersComponent implements OnInit {
     this.refreshCategoryList();
     this.refreshOffersList();
   }
-
   refreshCategoryList() {
     this.service.getCategories().subscribe(data => {
       console.log(data);
 
-      this.CategoryList = data;
+      this.CategoryList = data.sort(function(a, b) {
+        return a.ordering - b.ordering;
+      });;
     });
   }
   refreshOffersList() {
