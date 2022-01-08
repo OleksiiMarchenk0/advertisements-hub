@@ -1,3 +1,4 @@
+import { Category } from './../interface/category';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
 @Component({
@@ -6,23 +7,37 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./offers.component.scss']
 })
 export class OffersComponent implements OnInit {
-  OffersList:any=[];
+  OffersList: any = [];
+  CategoryList: any = [];
+  public filterCategory: any;
   constructor(private service: SharedService) { }
 
   ngOnInit(): void {
+    this.refreshCategoryList();
     this.refreshOffersList();
+  }
+
+  refreshCategoryList() {
+    this.service.getCategories().subscribe(data => {
+      console.log(data);
+
+      this.CategoryList = data;
+    });
   }
   refreshOffersList() {
     this.service.getOffers().subscribe(data => {
+      this.filterCategory = data;
       console.log(data);
-
       this.OffersList = data;
     });
   }
-
-  filterOffers(){
-    let el = document.getElementById
-    this.OffersList= this.OffersList.filter((offer:any)=>offer.category===4)
-    console.log("ok");
+  filterOffers(category: Category) {
+    this.filterCategory = this.OffersList
+      .filter((a: any) => {
+        if (a.category == category.id || category.id == null) {
+          return a;
+        }
+      })
   }
 }
+
