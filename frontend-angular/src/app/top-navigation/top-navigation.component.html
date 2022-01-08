@@ -1,3 +1,10 @@
-<nav class="nav nav-pills mt-2 mb-2">
-  <a class="nav-link active" aria-current="page" [routerLink]="['/offers']">Advertisements</a>
-</nav>
+<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Advertisement Hub</a>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/']">Offers <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</div>

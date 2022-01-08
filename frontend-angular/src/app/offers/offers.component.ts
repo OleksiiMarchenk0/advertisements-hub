@@ -1,15 +1,21 @@
 import { Category } from './../interface/category';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Offer } from '../interface/offer';
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.scss']
 })
 export class OffersComponent implements OnInit {
-  OffersList: any = [];
-  CategoryList: any = [];
-  public filterCategory: any;
+  allCategoriesFilter:Category=  {
+    "id": 0,
+    "name": "",
+    "ordering": 0
+}
+  OffersList: Offer[] = [];
+  CategoryList: Category[] = [];
+  public filteredOffers: Offer[]=[];
   constructor(private service: SharedService) { }
 
   ngOnInit(): void {
@@ -26,16 +32,16 @@ export class OffersComponent implements OnInit {
   }
   refreshOffersList() {
     this.service.getOffers().subscribe(data => {
-      this.filterCategory = data;
+      this.filteredOffers = data;
       console.log(data);
       this.OffersList = data;
     });
   }
   filterOffers(category: Category) {
-    this.filterCategory = this.OffersList
-      .filter((a: any) => {
-        if (a.category == category.id || category.id == null) {
-          return a;
+    this.filteredOffers = this.OffersList
+      .filter((offer: any) => {
+        if (offer.category == category.id || category.id == 0) {
+          return offer;
         }
       })
   }
