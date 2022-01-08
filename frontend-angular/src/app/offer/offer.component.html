@@ -1,7 +1,24 @@
-<div *ngIf="isDataAvailable">
- <p>Nazwa : {{offer.name}}</p>
- <p>Opis : {{offer.description}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7" *ngIf="isDataAvailable">
+      <div class="badge bg-primary text-wrap " style="width: 6rem;">
+        {{category.name}}
+      </div>
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">
+          <h1 class="fs-1">{{offer.name}}</h1>
+        </div>
+      </div>
+      <p class="fw-lighter fs-6 text-wrap">{{offer.description}}</p>
+      <div class="alert alert-success" role="alert">
+        {{offer.price | currency:'PLN '}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <p>Opis : {{offer.description}}</p>
  <p>Cena : {{offer.price}}</p>
  <p>Utworzono dnia : {{offer.created_at}}</p>
  {{category.name}}
-</div>
+</div> -->

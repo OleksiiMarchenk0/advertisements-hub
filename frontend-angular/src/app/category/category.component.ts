@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SharedService } from '../shared.service';
 @Component({
   selector: 'app-category',
@@ -7,6 +7,8 @@ import { SharedService } from '../shared.service';
 })
 export class CategoryComponent implements OnInit {
   CategoryList: any = [ ];
+  selectedCategories:any=[];
+
   constructor(private service: SharedService) { }
   ngOnInit(): void {
     this.refreshCategoryList();
@@ -18,4 +20,9 @@ export class CategoryComponent implements OnInit {
       this.CategoryList = data;
     });
   }
+
+  chooseCategories(){
+    
+  }
+
 }

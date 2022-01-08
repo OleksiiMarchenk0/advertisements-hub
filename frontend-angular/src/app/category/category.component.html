@@ -1,6 +1,18 @@
-  <select name="category" >
+  <!-- <select name="category" >
     <option value="">--Please choose an option--</option>
     <option *ngFor="let category of CategoryList" value=category.name>{{category.name}}</option>
 </select>
 <input type="checkbox" id="scales" name="scales"
-    checked>
+    checked> -->
+
+
+Filter category
+    <div class="form-check"  *ngFor="let category of CategoryList">
+      <input class="form-check-input"
+      type="checkbox" value={{category.id}}
+      id={{category.name}} >
+      <label class="form-check-label" for={{category.name}}>
+       {{category.name}}
+      </label>
+    </div>
+    <button (click)=chooseCategories() type="button" class="btn btn-primary">Filter</button>

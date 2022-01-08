@@ -20,4 +20,9 @@ export class OffersComponent implements OnInit {
     });
   }
 
+  filterOffers(){
+    let el = document.getElementById
+    this.OffersList= this.OffersList.filter((offer:any)=>offer.category===4)
+    console.log("ok");
+  }
 }
