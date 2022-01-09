@@ -22,9 +22,8 @@ docker-compose up
 * Frontend app will be available at http://localhost:4200/
 ## Setup project without Docker
 ### Backend
-Open a terminal at the repo root, and run the following for running Django project:
+Open project in [PyCharm](https://www.jetbrains.com/pycharm/download/#section=mac). In PyCharm terminal use following commands:
 ```bash
-pipenv install
 pipenv shell
 cd python-django/AdvertisementsHub_Django
 python manage.py runserver
