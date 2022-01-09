@@ -1,12 +1,17 @@
 version: "3.9"
 services:
-  django:
-    build: ./python-django/AdvertisementsHub_Django
-    volumes:
-      - .:/code/
-    ports:
-      - "8000:8000"
-  angular:
-    build: frontend-angular # specify the directory of the Dockerfile
-    ports:
-      - "4200:4200" # specify port forewarding
+    django:
+          build: ./python-django/AdvertisementsHub_Django
+          volumes:
+            - .:/code/
+          ports:
+            - "8000:8000"
+    angular:
+            container_name: angular-service-container
+            build: ./frontend-angular
+            volumes:
+                - './frontend-angular:/usr/src/app'
+            ports:
+                - '4200:4200'
+            depends_on:
+            - django
