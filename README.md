@@ -24,7 +24,6 @@ docker-compose up
 ### Backend
 Open project in [PyCharm](https://www.jetbrains.com/pycharm/download/#section=mac). In PyCharm terminal use following commands:
 ```bash
-pipenv shell
 cd python-django/AdvertisementsHub_Django
 python manage.py runserver
 ```
